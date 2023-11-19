@@ -1,11 +1,10 @@
 import Container from 'react-bootstrap/Container';
 import { Link } from 'react-router-dom';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
 import { useNavigate } from 'react-router-dom';
 import './style.css' 
 import Dropdown from 'react-bootstrap/Dropdown';
-import useIsLoggedIn from '../../hooks/useIsLoggedIn'; 
+import useIsLoggedIn from '../../hooks/useIsLoggedIn';
+import { Navbar, Nav, Button } from 'react-bootstrap';
 
 const NavBar: React.FC = () => {
     //Utils
@@ -22,13 +21,20 @@ const NavBar: React.FC = () => {
     return (
         <Navbar expand="lg" className="bg-body-tertiary">
             <Container>
+                <Navbar.Brand href="/">
+                    <img
+                    src="https://raw.githubusercontent.com/guinia/LasFuerzasDelCielo/688ec6c2a2b9f1bcd9e2a7cacf887efd1a53ef58/logo.svg"
+                    alt="El Buen Sabor logo"
+                    className="logo-img"
+                    />
+                </Navbar.Brand>
                 <Navbar.Brand as={Link} to="/">El Buen Sabor</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link as={Link} to="/">Home</Nav.Link>
+
                         {isLoggedIn && <Dropdown>
-                            <Dropdown.Toggle variant="success" id="dropdown-basic">
+                            <Dropdown.Toggle className="btn-navbar">
                                 ABMs
                             </Dropdown.Toggle>
 
@@ -41,15 +47,21 @@ const NavBar: React.FC = () => {
                                 <Dropdown.Item href="/admin/adminRubroProducto">ABM Rubro Producto</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>}
-                        {!isLoggedIn && <Nav.Link as={Link} to="/login">Iniciar Sesion</Nav.Link>}
-                        {!isLoggedIn && <Nav.Link as={Link} to="/register">Registrarse</Nav.Link>}
-                        {/*<Nav.Link as={Link} to="/admin/Persona">ABM Persona</Nav.Link>
-                        <Nav.Link as={Link} to="/admin/AdminArticuloManufacturado">ABM Articulo Manufacturado</Nav.Link>
-                        <Nav.Link as={Link} to="/admin/adminArticuloInsumo">ABM Articulo Insumo</Nav.Link>
-                        <Nav.Link as={Link} to="/admin/adminUnidadMedida">ABM Unidad Medida</Nav.Link>
-                        <Nav.Link as={Link} to="/admin/adminRubroArticuloInsumo">ABM Rubro Articulo Insumo</Nav.Link>
-                        <Nav.Link as={Link} to="/admin/adminRubroProducto">ABM Rubro Producto</Nav.Link>*/}
-                        {isLoggedIn && <Nav.Link onClick={onLogOut}>Log Out</Nav.Link>}
+                        {!isLoggedIn && 
+                            <Nav.Link as={Link} to="/login">
+                                 <Button variant="primary" className="btn-navbar">Iniciar Sesión</Button>
+                            </Nav.Link>
+                        }
+                        {!isLoggedIn && 
+                            <Nav.Link as={Link} to="/register">
+                                 <Button variant="primary" className="btn-navbar">Registrarse</Button>
+                            </Nav.Link>
+                        }
+                        {isLoggedIn &&
+                            <Nav.Link onClick={onLogOut}>
+                                <Button variant="primary" className="btn-navbar">Cerrar Sesión</Button>
+                            </Nav.Link>
+                        }
                     </Nav>
                 </Navbar.Collapse>
             </Container>
