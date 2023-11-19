@@ -42,6 +42,7 @@ const NavBar: React.FC = () => {
                                 <Dropdown.Item href="/admin/adminRubroProducto">ABM Rubro Producto</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
+                        {!isLoggedIn && <Nav.Link as={Link} to="/login">Iniciar Sesion</Nav.Link>}
                         {/*<Nav.Link as={Link} to="/admin/Persona">ABM Persona</Nav.Link>
                         <Nav.Link as={Link} to="/admin/AdminArticuloManufacturado">ABM Articulo Manufacturado</Nav.Link>
                         <Nav.Link as={Link} to="/admin/adminArticuloInsumo">ABM Articulo Insumo</Nav.Link>

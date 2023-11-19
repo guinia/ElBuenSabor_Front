@@ -14,8 +14,10 @@ const Login: React.FC = () => {
 
   // Render
     return (
+
+      
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100vh', width: '100vw' }}>
-            <Button onClick={onLogIn}>Log In</Button>
+            <Button onClick={onLogIn}>Iniciar Sesion</Button>
         </div>
     );
 };
