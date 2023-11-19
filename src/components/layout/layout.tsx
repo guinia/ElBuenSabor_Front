@@ -27,8 +27,7 @@ const NavBar: React.FC = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link as={Link} to="/">Home</Nav.Link>
-                        <Nav.Link as={Link} to="/components">Components</Nav.Link>
-                        <Dropdown>
+                        {isLoggedIn && <Dropdown>
                             <Dropdown.Toggle variant="success" id="dropdown-basic">
                                 ABMs
                             </Dropdown.Toggle>
@@ -41,8 +40,9 @@ const NavBar: React.FC = () => {
                                 <Dropdown.Item href="/admin/adminRubroArticuloInsumo">ABM Rubro Articulo Insumo</Dropdown.Item>
                                 <Dropdown.Item href="/admin/adminRubroProducto">ABM Rubro Producto</Dropdown.Item>
                             </Dropdown.Menu>
-                        </Dropdown>
+                        </Dropdown>}
                         {!isLoggedIn && <Nav.Link as={Link} to="/login">Iniciar Sesion</Nav.Link>}
+                        {!isLoggedIn && <Nav.Link as={Link} to="/register">Registrarse</Nav.Link>}
                         {/*<Nav.Link as={Link} to="/admin/Persona">ABM Persona</Nav.Link>
                         <Nav.Link as={Link} to="/admin/AdminArticuloManufacturado">ABM Articulo Manufacturado</Nav.Link>
                         <Nav.Link as={Link} to="/admin/adminArticuloInsumo">ABM Articulo Insumo</Nav.Link>

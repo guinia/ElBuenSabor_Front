@@ -7,36 +7,53 @@ import { useState } from "react";
 import { AuthService } from "../../services/authService";
 import * as yup from "yup";
 
-const FormRegister: React.FC = () => {
+interface FormRegisterProps {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    onRegister: (registerData: any) => void;
+}
+
+const FormRegister: React.FC<FormRegisterProps> = ({onRegister}) => {
     const navigate = useNavigate();
     const [show, setShow] = useState(true);
 
     const validationSchema = yup.object().shape({
         username: yup.string().required("Este campo es obligatorio"),
         password: yup.string().required("Este campo es obligatorio"),
-        nombre: yup.string().required("El nombre es obligatorio"),
-        apellido: yup.string().required("El apellido es obligatorio"),
-        pais: yup.string().required("El país es obligatorio")
+        firstname: yup.string().required("El nombre es obligatorio"),
+        lastname: yup.string().required("El apellido es obligatorio"),
+        country: yup.string().required("El país es obligatorio"),
+        
+        auth0Id: yup.string().required("Este campo es obligatorio"),
+        rol: yup.string().required("Este campo es obligatorio"),
     });
+
+
+    
 
     const formik = useFormik({
         initialValues: {
             username: '',
             password: '',
-            nombre: '',
-            apellido: '',
-            pais: '',          
+            firstname: '',
+            lastname: '',
+            country: '',  
+            auth0Id: 0,
+            rol: '',
+            
         },
 
         validationSchema: validationSchema,
 
         onSubmit: async (values) => {
             try {
-                const token = await AuthService.register(values);
+                const token = await AuthService.register(values); //revisar esto
                 console.log("Registro realizado. Token:", token);
                 toast.success("Registro realizado");
                 handleHide();
+                window.localStorage.setItem('isLoggedIn', 'true');
                 navigate("/");
+                //onRegister(values);
+                
             } catch (error) {
                 toast.error('Revise los datos ingresados');
                 console.error("Error al registrarse");
@@ -61,21 +78,6 @@ const FormRegister: React.FC = () => {
             </Modal.Header>
             <Modal.Body>
                 <Form onSubmit={formik.handleSubmit} id="contenedorCamposFormulario">
-                    <Form.Group controlId="nombre">
-                        <Form.Label>Nombre</Form.Label>
-                        <Form.Control
-                            name="firstname"
-                            type="text"
-                            value={formik.values.nombre}
-                            onChange={formik.handleChange}
-                            onBlur={formik.handleBlur}
-                            isInvalid={Boolean(formik.errors.nombre && formik.touched.nombre)}
-                        />
-                        <Form.Control.Feedback type="invalid">
-                            {formik.errors.nombre}
-                        </Form.Control.Feedback>
-                    </Form.Group>
-
                     <Form.Group controlId="username">
                         <Form.Label>Username</Form.Label>
                         <Form.Control
@@ -109,41 +111,87 @@ const FormRegister: React.FC = () => {
                             {formik.errors.password}
                         </Form.Control.Feedback>
                     </Form.Group>
+                    
+                    <Form.Group controlId="firstname">
+                        <Form.Label>Nombre</Form.Label>
+                        <Form.Control
+                            name="firstname"
+                            type="text"
+                            value={formik.values.firstname}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            isInvalid={Boolean(formik.errors.firstname && formik.touched.firstname)}
+                        />
+                        <Form.Control.Feedback type="invalid">
+                            {formik.errors.firstname}
+                        </Form.Control.Feedback>
+                    </Form.Group>
 
-                    <Form.Group controlId="apellido">
+                    <Form.Group controlId="lastname">
                         <Form.Label>Apellido</Form.Label>
                         <Form.Control
-                            name="apellido"
+                            name="lastname"
                             type="text"
-                            value={formik.values.apellido}
+                            value={formik.values.lastname}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                             isInvalid={Boolean(
-                                formik.errors.apellido && formik.touched.apellido
+                                formik.errors.lastname && formik.touched.lastname
                             )}
                         />
                         <Form.Control.Feedback type="invalid">
-                            {formik.errors.apellido}
+                            {formik.errors.lastname}
                         </Form.Control.Feedback>
                     </Form.Group>
 
-                    <Form.Group controlId="pais">
+                    <Form.Group controlId="country">
                         <Form.Label>Pais</Form.Label>
                         <Form.Control
-                            name="pais"
+                            name="country"
                             type="text"
-                            value={formik.values.pais}
+                            value={formik.values.country}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
-                            isInvalid={Boolean(formik.errors.pais && formik.touched.pais)}
+                            isInvalid={Boolean(formik.errors.country && formik.touched.country)}
                         />
                         <Form.Control.Feedback type="invalid">
-                            {formik.errors.pais}
+                            {formik.errors.country}
                         </Form.Control.Feedback>
                     </Form.Group>
 
+                    <Form.Group controlId="auth0Id">
+                        <Form.Label>Auth0</Form.Label>
+                        <Form.Control
+                            name="auth0Id"
+                            type="number"
+                            value={formik.values.auth0Id}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            isInvalid={Boolean(formik.errors.auth0Id && formik.touched.auth0Id)}
+                        />
+                        <Form.Control.Feedback type="invalid">
+                            {formik.errors.auth0Id}
+                        </Form.Control.Feedback>
+                    </Form.Group>
+
+                    <Form.Group controlId="rol">
+                        <Form.Label>Rol</Form.Label>
+                        <Form.Control
+                            name="rol"
+                            type="text"
+                            value={formik.values.rol}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            isInvalid={Boolean(formik.errors.rol && formik.touched.rol)}
+                        />
+                        <Form.Control.Feedback type="invalid">
+                            {formik.errors.rol}
+                        </Form.Control.Feedback>
+                    </Form.Group>
+                    
+
                     <Modal.Footer className="mt-4" id="contenedorBotonRegistrarse">
-                        <Button variant="primary" type="submit" disabled={!formik.isValid} id="botonRegistrarse">
+                        <Button variant="primary" type="submit" disabled={!formik.isValid} id="botonRegistrarse" onClick={onRegister}>
                             Registrarse
                         </Button>
                     </Modal.Footer>

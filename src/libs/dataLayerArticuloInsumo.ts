@@ -1,17 +1,21 @@
 import ArticuloInsumo from '../types/articuloInsumo';
 
 
-const API_BASE_URL: string = 'https://buensaborseg.onrender.com/api/v1/articulosinsumos';
+const API_BASE_URL: string = 'https://seguridad-bs.onrender.com/api/v1/articulosinsumos';
 
+
+
+const tokenObtenido = localStorage.getItem('token');
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const fetchApiCall = async (method: 'GET' | 'POST' | 'PUT' | 'DELETE', id?: number, payload?: ArticuloInsumo): Promise<any> => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const options: any = {headers: {'Content-Type': 'application/json' }, method};
+    const options: any = {headers: {'Content-Type': 'application/json', 'Authorization': `Bearer ${tokenObtenido}` }, method};
 
     if (payload) {
         options.body = JSON.stringify(payload);
     }
+
     const response = await fetch(id ? `${API_BASE_URL}/${id}` : API_BASE_URL, options);
     const data = await response.json();
 

@@ -12,7 +12,7 @@
 }
 
 *{
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    /*font-family: 'Plus Jakarta Sans', sans-serif;*/
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -323,4 +323,4 @@ td img{
     text-align: center;
     font-family: 'Orelega One', sans-serif;
     font-size: 32px;
-}
+} 

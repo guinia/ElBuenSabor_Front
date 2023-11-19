@@ -10,11 +10,13 @@ const AdminArticuloManufacturado = React.lazy(()=> import('../pages/admin/adminA
 const Home = React.lazy(() => import('../pages/home/home'));
 const Login = React.lazy(() => import('../pages/login/login'));
 const PrivateRoute = React.lazy(() => import('./privateRoute'));
+const Register = React.lazy(() => import('../pages/register/register'));
 
 const Router: React.FC = () => (
     <Routes>
         <Route element={<Home />} path="/" />
         <Route element={<Login />} path="/login" />
+        <Route element={<Register />} path="/register" />
         <Route element={<PrivateRoute element={<AdminPersona />} />} path="/admin/Persona" />
         <Route element={<PrivateRoute element={<AdminArticuloManufacturado/>} /> } path="/admin/AdminArticuloManufacturado"/>
         <Route element={<PrivateRoute element={<AdminArticuloInsumo />} />} path="/admin/adminArticuloInsumo" />

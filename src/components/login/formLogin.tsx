@@ -6,7 +6,12 @@ import { AuthService } from "../../services/authService";
 import { useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 
-const FormLogin: React.FC = () => {
+interface FormLoginProps {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    onLogin: (loginData: any) => void;
+}
+
+const FormLogin: React.FC<FormLoginProps> = ({onLogin}) => {
 
     const navigate = useNavigate();
     const [show, setShow] = useState(true);
@@ -16,6 +21,10 @@ const FormLogin: React.FC = () => {
         username: Yup.string().required("El nombre de usuario es requerido"),
         password: Yup.string().required("La contraseña es requerida"),
     });
+
+    const handleHide = () => {
+        setShow(false);
+    };
 
     const formik = useFormik({
         initialValues: {
@@ -29,6 +38,8 @@ const FormLogin: React.FC = () => {
         try {
             const token = await AuthService.login(values);
             console.log("Inicio de sesión exitoso. Token:", token);
+            handleHide();
+            window.localStorage.setItem('isLoggedIn', 'true');
             navigate('/');
             toast.success('Inicio de sesión exitoso');
             } catch (error) {
@@ -39,9 +50,7 @@ const FormLogin: React.FC = () => {
         },
     });
 
-    const handleHide = () => {
-        setShow(false);
-    };
+
 
     return (
         <Modal
@@ -89,7 +98,7 @@ const FormLogin: React.FC = () => {
                     </Form.Group>
 
                     <Modal.Footer className="mt-4" id="contenedorBotonRegistrarse">
-                        <Button variant="primary" type="submit" disabled={!formik.isValid} id="botonRegistrarse">
+                        <Button variant="primary" type="submit" disabled={!formik.isValid} id="botonRegistrarse" onClick={onLogin}>
                             Iniciar sesion
                         </Button>
                     </Modal.Footer>

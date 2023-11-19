@@ -1,11 +1,14 @@
 import RubroProducto from "../types/rubroProducto";
 
-const API_BASE_URL: string = 'https://buensaborseg.onrender.com/api/v1/RubroArticuloManufacturado';
+const API_BASE_URL: string = 'https://seguridad-bs.onrender.com/api/v1/RubroArticuloManufacturado';
 
 
+
+const tokenObtenido = localStorage.getItem('token');
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const fetchApiCall = async (method: 'GET' | 'POST' | 'PUT' | 'DELETE', id?: number, payload?: RubroProducto): Promise<any> => {
-    
-    const options: any = {headers: {'Content-Type': 'application/json' }, method};
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const options: any = {headers: {'Content-Type': 'application/json', 'Authorization': `Bearer ${tokenObtenido}` }, method};
 
     if (payload) {
         options.body = JSON.stringify(payload);

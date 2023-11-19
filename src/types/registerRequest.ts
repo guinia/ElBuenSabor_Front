@@ -1,8 +1,11 @@
 export interface registerRequest {
     username: string,
     password: string,
-    nombre: string,
-    apellido: string,
-    pais: string,
+    firstname: string,
+    lastname: string,
+    country: string,
+    auth0Id: number,
+    rol: string,
+    
 
 }
