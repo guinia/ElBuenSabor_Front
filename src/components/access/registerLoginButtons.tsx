@@ -48,7 +48,7 @@ const registerLoginButtons = () => {
                     onHide={handleCloseFormRegister}
                     modalType = {modalType}
                 />
-            )} 
+            )}
 
             {showFormLogin && (
                 <FormLogin
