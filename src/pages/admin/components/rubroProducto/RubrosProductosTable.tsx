@@ -4,6 +4,7 @@ import * as React from 'react';
 import Spinner from 'react-bootstrap/Spinner';
 import Table from 'react-bootstrap/Table';
 import './../Table.css';
+import { Pencil, Trash } from 'react-bootstrap-icons';
 
 import RubroProducto from '../../../../types/rubroProducto';
 import DataLayerRubroPruducto from '../../../../libs/dataLayerRubroProducto';
@@ -108,10 +109,9 @@ const RubrosProductosTable: React.FC<RubrosProductosTableProps> = ({ rubrosProdu
                                     <tr key={i.id}>
                                         <td width='2%'>{i.id}</td>
                                         <td width='23%'>{i.denominacion}</td>
-                                        
                                         <td width='10%' justify-content='space-around'>
-                                            <Button onClick={() => onShowSaveModal(i)} variant="secondary">Editar</Button>
-                                            <Button onClick={() => onShowDeleteModal(i)} variant="secondary">Borrar</Button>
+                                            <Pencil color="black" onClick={() => onShowSaveModal(i)} size={24} onMouseEnter={() => { document.body.style.cursor = 'pointer' }} onMouseLeave={() => { document.body.style.cursor = 'default' }}></Pencil>
+                                            <Trash color="#D32B08" onClick={() => onShowDeleteModal(i)} size={24} onMouseEnter={() => { document.body.style.cursor = 'pointer' }} onMouseLeave={() => { document.body.style.cursor = 'default' }} ></Trash>
                                         </td>
                                     </tr>
                                 ))}

@@ -1,4 +1,4 @@
-import { TrashFill, PencilFill } from 'react-bootstrap-icons';
+import { Trash, Pencil } from 'react-bootstrap-icons';
 import * as React from 'react';
 import Alert from 'react-bootstrap/Alert';
 import Button from 'react-bootstrap/Button';
@@ -117,8 +117,8 @@ const RubroInsumoTable: React.FC<RubroInsumoTableProps> = ({ rubros }) => {
                         <td width='70%'>{r.denominacion}</td>
                         {/* <td width='15%'>{r.rubroPadre}</td> */}
                         <td width='15%'>
-                          <PencilFill color="#6E5519" onClick={() => onShowSaveModal(r)} size={24} onMouseEnter={() => { document.body.style.cursor = 'pointer' }} onMouseLeave={() => { document.body.style.cursor = 'default' }}></PencilFill>
-                          <TrashFill color="#D32B08" onClick={() => onShowDeleteModal(r)} size={24} onMouseEnter={() => { document.body.style.cursor = 'pointer' }} onMouseLeave={() => { document.body.style.cursor = 'default' }} ></TrashFill>
+                          <Pencil color="black" onClick={() => onShowSaveModal(r)} size={24} onMouseEnter={() => { document.body.style.cursor = 'pointer' }} onMouseLeave={() => { document.body.style.cursor = 'default' }}></Pencil>
+                          <Trash color="#D32B08" onClick={() => onShowDeleteModal(r)} size={24} onMouseEnter={() => { document.body.style.cursor = 'pointer' }} onMouseLeave={() => { document.body.style.cursor = 'default' }} ></Trash>
                         </td>
                       </tr>
                     ))

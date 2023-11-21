@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import * as React from 'react';
 import Spinner from 'react-bootstrap/Spinner';
 import Table from 'react-bootstrap/Table';
+import { Trash, Pencil } from 'react-bootstrap-icons';
 
 import Persona from "../../../../types/persona";
 import dataLayerPersona from '../../../../libs/dataLayerPersona';
@@ -118,8 +119,8 @@ const PersonasTable: React.FC<PersonasTableProps> = ({ personas }) => {
                         <td width='10%'>{p.telefono}</td>
                         <td width='5%'>{p.email}</td>
                         <td width='10%'>
-                          <Button onClick={() => onShowSaveModal(p)} variant="link">Editar</Button>
-                          <Button onClick={() => onShowDeleteModal(p)} variant="link">Eliminar</Button>
+                          <Pencil color="black" onClick={() => onShowSaveModal(p)} size={24} onMouseEnter={() => { document.body.style.cursor = 'pointer'}} onMouseLeave={() => { document.body.style.cursor = 'default'}}></Pencil>
+                          <Trash color="#D32B08" onClick={() => onShowDeleteModal(p)} size={24} onMouseEnter={() => { document.body.style.cursor = 'pointer'}}  onMouseLeave={() => { document.body.style.cursor = 'default'}} ></Trash>
                         </td>
                       </tr>
                     ))

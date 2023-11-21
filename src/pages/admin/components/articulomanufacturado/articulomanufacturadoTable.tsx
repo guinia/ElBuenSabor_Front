@@ -5,8 +5,7 @@ import Spinner from 'react-bootstrap/Spinner';
 import Table from 'react-bootstrap/Table';
 import articulomanufacturado from '../../../../types/articulomanufacturado';
 import dataLayerArticuloManufacturado from '../../../../libs/dataLayerArticuloManufacturado';
-import { TrashFill } from 'react-bootstrap-icons';
-import { PencilFill } from 'react-bootstrap-icons';
+import { Trash, Pencil } from 'react-bootstrap-icons';
 import '../Table.css';
 
 
@@ -146,8 +145,8 @@ const articulomanufacturadoTable: React.FC<articulomanufacturadoTableProps> = ({
                         <td width='30%'>{p.tiempoEstimadoCocina}</td>
                         <td width='10%'>
                         <td width='10%' justify-content='space-around'>
-                                                <PencilFill color="#6E5519" onClick={() => onShowSaveModal(p)} size={24} onMouseEnter={() => { document.body.style.cursor = 'pointer'}} onMouseLeave={() => { document.body.style.cursor = 'default'}}></PencilFill>
-                                                <TrashFill color="#D32B08" onClick={() => onShowDeleteModal(p)} size={24} onMouseEnter={() => { document.body.style.cursor = 'pointer'}}  onMouseLeave={() => { document.body.style.cursor = 'default'}} ></TrashFill>
+                          <Pencil color="black" onClick={() => onShowSaveModal(p)} size={24} onMouseEnter={() => { document.body.style.cursor = 'pointer'}} onMouseLeave={() => { document.body.style.cursor = 'default'}}></Pencil>
+                          <Trash color="#D32B08" onClick={() => onShowDeleteModal(p)} size={24} onMouseEnter={() => { document.body.style.cursor = 'pointer'}}  onMouseLeave={() => { document.body.style.cursor = 'default'}} ></Trash>
                         </td>
                         </td>
                       </tr>

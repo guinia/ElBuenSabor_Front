@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import * as React from 'react';
 import Spinner from 'react-bootstrap/Spinner';
 import Table from 'react-bootstrap/Table';
-import { TrashFill, PencilFill } from 'react-bootstrap-icons';
+import { Trash, Pencil } from 'react-bootstrap-icons';
 
 import '../Table.css';
 import ArticuloInsumo from '../../../../types/articuloInsumo';
@@ -126,8 +126,8 @@ const InsumosTable: React.FC<InsumosTableProps> = ({insumos}) => {
                                     <th>Nombre</th>
                                     <th>Precio Compra</th>
                                     <th>Stock Actual</th>
-                                    <th>Stock Minimo</th>
-                                    <th>imagen</th>
+                                    <th>Stock Mínimo</th>
+                                    <th>Imagen</th>
                                     {/* <th>Unidad de medida</th>
                                     <th>Rubro</th> */}
                                     <th>Acciones</th>
@@ -146,8 +146,8 @@ const InsumosTable: React.FC<InsumosTableProps> = ({insumos}) => {
                                             {/* <td width='10%'>{i.unidadMedida.abreviatura}</td>
                                             <td width='15%'>{i.rubroArticuloInsumo.denominacion}</td> */}
                                             <td width='10%' justify-content='space-around'>
-                                                <PencilFill color="#6E5519" onClick={() => onShowSaveModal(i)} size={24} onMouseEnter={() => { document.body.style.cursor = 'pointer'}} onMouseLeave={() => { document.body.style.cursor = 'default'}}></PencilFill>
-                                                <TrashFill color="#D32B08" onClick={() => onShowDeleteModal(i)} size={24} onMouseEnter={() => { document.body.style.cursor = 'pointer'}}  onMouseLeave={() => { document.body.style.cursor = 'default'}} ></TrashFill>
+                                                <Pencil color="black" onClick={() => onShowSaveModal(i)} size={24} onMouseEnter={() => { document.body.style.cursor = 'pointer'}} onMouseLeave={() => { document.body.style.cursor = 'default'}}></Pencil>
+                                                <Trash color="#D32B08" onClick={() => onShowDeleteModal(i)} size={24} onMouseEnter={() => { document.body.style.cursor = 'pointer'}}  onMouseLeave={() => { document.body.style.cursor = 'default'}} ></Trash>
                                             </td>
                                         </tr>
                                     ))
