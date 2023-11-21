@@ -9,7 +9,17 @@ const Footer = React.lazy(() => import('./components/footer/footer'))
 
 function App() {
   return(
-    <React.Suspense fallback={<Spinner animation="border" />}>
+    <React.Suspense fallback={<div style={{
+                                  display: 'flex',
+                                  alignItems: 'center',
+                                  justifyContent: 'center',
+                                  alignContent:'center',
+                                  width:'100%',
+                                  height:'100%',
+                                  }}>
+                              <Spinner animation="border" />
+                              </div>
+                            }>
       <BrowserRouter>
         <Layout />
         <Router />
