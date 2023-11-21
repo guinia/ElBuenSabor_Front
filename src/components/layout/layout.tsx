@@ -37,7 +37,6 @@ const NavBar: React.FC = () => {
                             <Dropdown.Toggle className="btn-navbar">
                                 ABMs
                             </Dropdown.Toggle>
-
                             <Dropdown.Menu>
                                 <Dropdown.Item href="/admin/adminPersona">ABM Persona</Dropdown.Item>
                                 <Dropdown.Item href="/admin/adminArticuloManufacturado">ABM Articulo Manufacturado</Dropdown.Item>
@@ -59,7 +58,7 @@ const NavBar: React.FC = () => {
                         }
                         {isLoggedIn &&
                             <Nav.Link onClick={onLogOut}>
-                                <Button variant="primary" className="btn-navbar">Cerrar Sesión</Button>
+                                <Button variant="primary" className="btn-navbar">Cerrar sesión</Button>
                             </Nav.Link>
                         }
                     </Nav>

@@ -33,5 +33,3 @@ const AdminUnidadMedida: React.FC = () => {
 };
 
 export default AdminUnidadMedida;
-
-

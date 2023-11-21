@@ -19,7 +19,7 @@ function App() {
                                   }}>
                               <Spinner animation="border" />
                               </div>
-                            }>
+                              }>
       <BrowserRouter>
         <Layout />
         <Router />

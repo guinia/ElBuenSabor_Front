@@ -50,7 +50,7 @@ const SaveUnidadMedidaModal: React.FC<SaveUnidadMedidaModalProps> = ({onSave, on
                             <Form.Control 
                                 defaultValue={unidad?.denominacion}
                                 name="denominacion"
-                                placeholder='Denominacion'
+                                placeholder='Denominación'
                                 required
                                 type="text"
                             ></Form.Control>
