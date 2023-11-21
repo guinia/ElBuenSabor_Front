@@ -50,7 +50,6 @@ const Header = () => {
                             <li className=" item-link nav-item-dropdown">
                                 <a href="#" className="btn-navbar contenedor-usuario">
                                     ¡Hola, Admin!
-                
                                 </a>
                             </li>
                         </ul>

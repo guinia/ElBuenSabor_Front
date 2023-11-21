@@ -5,7 +5,7 @@ import Spinner from 'react-bootstrap/Spinner';
 import Table from 'react-bootstrap/Table';
 
 import Persona from "../../../../types/persona";
-import DataLayerPersona from '../../../../libs/dataLayerPersona';
+import dataLayerPersona from '../../../../libs/dataLayerPersona';
 import '../Table.css';
 
 const DeletePersonaModal = React.lazy(() => import('./DeletePersonaModal'));
@@ -39,7 +39,7 @@ const PersonasTable: React.FC<PersonasTableProps> = ({ personas }) => {
     if (selectedPersona) {
       setShowDeleteModal(false);
       setLoading(true);
-      DataLayerPersona.delete.persona(selectedPersona.id!)
+      dataLayerPersona.delete.persona(selectedPersona.id!)
         .then(() => setListedPersonas((prevState: Persona[]) => prevState.filter((item: Persona) => item.id !== selectedPersona.id)))
         .catch((error: any) => setError(error))
         .finally(() => setLoading(false));
@@ -50,7 +50,7 @@ const PersonasTable: React.FC<PersonasTableProps> = ({ personas }) => {
       setShowSaveModal(false);
       setLoading(true);
       if (p.id) {
-        DataLayerPersona.update.persona(p)
+        dataLayerPersona.update.persona(p)
           .then((editedPersona: Persona) => setListedPersonas((prevState: Persona[]) => prevState.map((item: Persona) => item.id === editedPersona.id ? editedPersona : item)))
           .catch((error: any) => setError(error))
           .finally(() => setLoading(false));
@@ -58,7 +58,7 @@ const PersonasTable: React.FC<PersonasTableProps> = ({ personas }) => {
         // Delete id property since it is a create action
         delete p.id;
 
-        DataLayerPersona.create.persona(p)
+        dataLayerPersona.create.persona(p)
           .then((createdPersona: Persona) => {
             setListedPersonas((prevState: Persona[]) => [...prevState, createdPersona]);
           })
@@ -145,4 +145,4 @@ const PersonasTable: React.FC<PersonasTableProps> = ({ personas }) => {
   );
 };
 
-export default PersonasTable
+export default PersonasTable;

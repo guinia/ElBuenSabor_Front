@@ -21,7 +21,11 @@ const AdminPersona: React.FC = () => {
 
   return loading
     ? (
-      <div style={{ alignItems: 'center', display: 'flex', height: '100vh', justifyContent: 'center', width: '100wh' }}>
+      <div style={{ alignItems: 'center', 
+                    display: 'flex', 
+                    height: '100vh',
+                    justifyContent: 'center', 
+                    width: '100wh' }}>
         <Spinner animation="border" />
       </div>
     )

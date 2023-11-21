@@ -39,8 +39,8 @@ const NavBar: React.FC = () => {
                             </Dropdown.Toggle>
 
                             <Dropdown.Menu>
-                                <Dropdown.Item href="/admin/Persona">ABM Persona</Dropdown.Item>
-                                <Dropdown.Item href="/admin/AdminArticuloManufacturado">ABM Articulo Manufacturado</Dropdown.Item>
+                                <Dropdown.Item href="/admin/adminPersona">ABM Persona</Dropdown.Item>
+                                <Dropdown.Item href="/admin/adminArticuloManufacturado">ABM Articulo Manufacturado</Dropdown.Item>
                                 <Dropdown.Item href="/admin/adminArticuloInsumo">ABM Articulo Insumo</Dropdown.Item>
                                 <Dropdown.Item href="/admin/adminUnidadMedida">ABM Unidad Medida</Dropdown.Item>
                                 <Dropdown.Item href="/admin/adminRubroArticuloInsumo">ABM Rubro Articulo Insumo</Dropdown.Item>

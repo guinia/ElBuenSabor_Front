@@ -2,7 +2,7 @@ import Alert from "react-bootstrap/Alert";
 import * as React from 'react';
 import Spinner from "react-bootstrap/Spinner";
 
-import useInsumos from "../../hooks/useInsumosState";
+import useInsumos from "../../hooks/useInsumos.tsx";
 
 const InsumosTable = React.lazy(() => import('./components/articuloInsumo/InsumosTable.tsx'));
 

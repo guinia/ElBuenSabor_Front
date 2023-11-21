@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthService } from '../../services/authService';
-import FormLogin from '../../components/login/formLogin';
+import FormLogin from '../../components/access/formLogin';
 
 const Login: React.FC = () => {
   // Utils
@@ -22,9 +22,11 @@ const Login: React.FC = () => {
 
   // Render
     return (
-
-      
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100vh', width: '100vw' }}>
+        <div style={{ display: 'flex', 
+                      alignItems: 'center', 
+                      justifyContent: 'center', 
+                      height: '100vh', 
+                      width: '100vw' }}>
             <FormLogin onLogin={onLogIn} />
         </div>
     );

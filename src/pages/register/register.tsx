@@ -1,6 +1,6 @@
 
 import * as React from 'react';
-import FormRegister from '../../components/login/formRegister';
+import FormRegister from '../../components/access/formRegister';
 import { useNavigate } from 'react-router-dom';
 import { AuthService } from '../../services/authService';
 
