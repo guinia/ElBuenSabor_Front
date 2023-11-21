@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import * as React from 'react';
-import AdminRubroProducto from '../pages/admin/adminRubroProducto';
 
+const AdminRubroProducto = React.lazy(() => import('../pages/admin/adminRubroProducto'));
 const AdminPersona = React.lazy(() => import('../pages/admin/adminPersona'));
 const AdminArticuloInsumo = React.lazy(() => import('../pages/admin/adminArticuloInsumo'));
 const AdminUnidadMedida = React.lazy(() => import('../pages/admin/adminUnidadMedida'));
@@ -17,8 +17,8 @@ const Router: React.FC = () => (
         <Route element={<Home />} path="/" />
         <Route element={<Login />} path="/login" />
         <Route element={<Register />} path="/register" />
-        <Route element={<PrivateRoute element={<AdminPersona />} />} path="/admin/Persona" />
-        <Route element={<PrivateRoute element={<AdminArticuloManufacturado/>} /> } path="/admin/AdminArticuloManufacturado"/>
+        <Route element={<PrivateRoute element={<AdminPersona />} />} path="/admin/adminPersona" />
+        <Route element={<PrivateRoute element={<AdminArticuloManufacturado/>} /> } path="/admin/adminArticuloManufacturado"/>
         <Route element={<PrivateRoute element={<AdminArticuloInsumo />} />} path="/admin/adminArticuloInsumo" />
         <Route element={<PrivateRoute element={<AdminUnidadMedida />} />} path="/admin/adminUnidadMedida" />
         <Route element={<PrivateRoute element={<AdminRubroArticuloInsumo />} />} path="/admin/adminRubroArticuloInsumo" />
