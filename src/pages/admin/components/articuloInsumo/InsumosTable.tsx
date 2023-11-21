@@ -145,7 +145,7 @@ const InsumosTable: React.FC<InsumosTableProps> = ({insumos}) => {
                                             <td width='25%'><img alt={i.urlImagen} src={i.urlImagen} style={{ height: 100, width: 100 }} /></td>
                                             {/* <td width='10%'>{i.unidadMedida.abreviatura}</td>
                                             <td width='15%'>{i.rubroArticuloInsumo.denominacion}</td> */}
-                                            <td width='10%' justify-content='space-around'>
+                                            <td width='10%' justify-content='space-between'>
                                                 <Pencil color="black" onClick={() => onShowSaveModal(i)} size={24} onMouseEnter={() => { document.body.style.cursor = 'pointer'}} onMouseLeave={() => { document.body.style.cursor = 'default'}}></Pencil>
                                                 <Trash color="#D32B08" onClick={() => onShowDeleteModal(i)} size={24} onMouseEnter={() => { document.body.style.cursor = 'pointer'}}  onMouseLeave={() => { document.body.style.cursor = 'default'}} ></Trash>
                                             </td>
