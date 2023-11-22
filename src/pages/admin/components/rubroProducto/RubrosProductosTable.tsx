@@ -94,13 +94,12 @@ const RubrosProductosTable: React.FC<RubrosProductosTableProps> = ({ rubrosProdu
                 )
                 : (
                     <div className="cuerpote">
-                        <Button onClick={() => onShowSaveModal()} style={{ float: 'right', margin: 10 }} variant="primary">Crear RubroProducto</Button>
+                        <Button onClick={() => onShowSaveModal()} style={{ float: 'right', margin: 10, border: '1px solid #D32B08', color:'white',backgroundColor:'#D32B08', borderColor:'#D32B08'}}>Crear Rubro Producto</Button>
                         <Table striped bordered hover>
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Denomiacion</th>
-                                   
+                                    <th>Denominación</th>
                                     <th>Acciones</th>
                                 </tr>
                             </thead>

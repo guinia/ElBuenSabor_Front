@@ -99,13 +99,13 @@ const RubroInsumoTable: React.FC<RubroInsumoTableProps> = ({ rubros }) => {
           )
           : (
             <div className="cuerpote">
-              <Button onClick={() => onShowSaveModal()} style={{ float: 'right', margin:
-              10 }} variant="primary">Crear Rubro Artículo Insumo</Button>
+              <Button onClick={() => onShowSaveModal()} style={{  float: 'right', margin: 10, border: '1px solid #D32B08', color:'white',backgroundColor:'#D32B08', borderColor:'#D32B08' }}>Crear Rubro Artículo Insumo</Button>
               <Table striped bordered hover>
                 <thead>
                   <tr>
                     <th>#</th>
                     <th>Denominación</th>
+                    <th>Acciones</th>
                     {/* <th>Rubro Padre</th> */}
                   </tr>
                 </thead>

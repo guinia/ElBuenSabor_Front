@@ -49,12 +49,12 @@ const SavearticulomanufacturadoModal: React.FC<SavearticulomanufacturadoModalPro
         <Modal.Body>
           <Row className="mb-3">
             <Form.Group as={Col}>
-              <Form.Label>Denominacion</Form.Label>
+              <Form.Label>Denominación</Form.Label>
               <Form.Control
                 value={denominacion}
                 onChange={(e) => setDenominacion(e.target.value)}
                 name="denominacion"
-                placeholder="Denominacion"
+                placeholder="Denominación"
                 required
                 type="text"
               />
@@ -62,12 +62,12 @@ const SavearticulomanufacturadoModal: React.FC<SavearticulomanufacturadoModalPro
           </Row>
           <Row className="mb-3">
             <Form.Group as={Col}>
-              <Form.Label>Descripcion</Form.Label>
+              <Form.Label>Descripción</Form.Label>
               <Form.Control
                 value={descripcion}
                 onChange={(e) => setDescripcion(e.target.value)}
                 name="descripcion"
-                placeholder="Descripcion"
+                placeholder="Descripción"
                 required
                 type="text"
               />

@@ -46,7 +46,7 @@ const SaveUnidadMedidaModal: React.FC<SaveUnidadMedidaModalProps> = ({onSave, on
                 <Modal.Body>
                     <Row className="mb-3">
                         <Form.Group as={Col}>
-                            <Form.Label>Title</Form.Label>
+                            <Form.Label>Denominación</Form.Label>
                             <Form.Control 
                                 defaultValue={unidad?.denominacion}
                                 name="denominacion"

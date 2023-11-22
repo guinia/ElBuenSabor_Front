@@ -1,4 +1,3 @@
-
 import * as React from 'react';
 import FormRegister from '../../components/access/formRegister';
 import { useNavigate } from 'react-router-dom';
@@ -13,7 +12,7 @@ const Register: React.FC = () => {
         try {
             const token = await AuthService.register(registerData);
             localStorage.setItem('token', token);
-            //window.localStorage.setItem('isLoggedIn', 'true'); //ver si sacar esto
+            window.localStorage.setItem('isLoggedIn', 'true'); //ver si sacar esto
             navigate('/');
         } catch (error){
             console.error('Error al registrarse');

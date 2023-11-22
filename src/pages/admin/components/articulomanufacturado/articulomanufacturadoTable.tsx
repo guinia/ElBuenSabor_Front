@@ -102,14 +102,9 @@ const articulomanufacturadoTable: React.FC<articulomanufacturadoTableProps> = ({
                <Button
                 onClick={() => onShowSaveModal()}
                 style={{
-                  float: 'right',
-                  margin: 10,
-                  backgroundColor: '#FFBC0D',
-                  borderColor: '#FFBC0D',
-                  color: '#fff',
-                  border: '1px solid #FFBC0D', // Agregado borde
+                  float: 'right', margin: 10, border: '1px solid #D32B08', color:'white',backgroundColor:'#D32B08', borderColor:'#D32B08'
                 }}
-                variant="primary"
+                
               >
                 Crear Articulo Manufacturado
               </Button>
@@ -127,8 +122,8 @@ const articulomanufacturadoTable: React.FC<articulomanufacturadoTableProps> = ({
                 <thead>
                   <tr>
                     <th>#</th>
-                    <th>Denominacion</th>
-                    <th>Descripcion</th>
+                    <th>Denominación</th>
+                    <th>Descripción</th>
                     <th>Precio de venta</th>
                     <th>Tiempo estimado en cocina</th>
                     <th>Acciones</th>
@@ -141,14 +136,13 @@ const articulomanufacturadoTable: React.FC<articulomanufacturadoTableProps> = ({
                         <td width='2%'>{p.id}</td>
                         <td width='23%'>{p.denominacion}</td>
                         <td width='30%'>{p.descripcion}</td>
-                        <td width='30%'>{p.precioVenta}</td>
-                        <td width='30%'>{p.tiempoEstimadoCocina}</td>
-                        <td width='10%'>
-                        <td width='10%' justify-content='space-around'>
+                        <td width='15%'>{p.precioVenta}</td>
+                        <td width='20%'>{p.tiempoEstimadoCocina}</td>
+                        <td width='10%' justify-content='space-between'>
                           <Pencil color="black" onClick={() => onShowSaveModal(p)} size={24} onMouseEnter={() => { document.body.style.cursor = 'pointer'}} onMouseLeave={() => { document.body.style.cursor = 'default'}}></Pencil>
                           <Trash color="#D32B08" onClick={() => onShowDeleteModal(p)} size={24} onMouseEnter={() => { document.body.style.cursor = 'pointer'}}  onMouseLeave={() => { document.body.style.cursor = 'default'}} ></Trash>
                         </td>
-                        </td>
+                      
                       </tr>
                     ))
                   }

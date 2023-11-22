@@ -45,7 +45,7 @@ const SaveRubroProductoModal: React.FC<SaveRubroProductoModalProps> = ({ onSave,
         <Modal.Body>
           <Row className="mb-3">
             <Form.Group as={Col}>
-              <Form.Label>denominacion</Form.Label>
+              <Form.Label>Denominación</Form.Label>
               <Form.Control
                 defaultValue={rubroProducto?.denominacion}
                 name="denominacion" // Corregido de "nombre" a "denominacion"

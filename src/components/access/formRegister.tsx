@@ -22,13 +22,8 @@ const FormRegister: React.FC<FormRegisterProps> = ({onRegister}) => {
         firstname: yup.string().required("El nombre es obligatorio"),
         lastname: yup.string().required("El apellido es obligatorio"),
         country: yup.string().required("El país es obligatorio"),
-        
-        auth0Id: yup.string().required("Este campo es obligatorio"),
         rol: yup.string().required("Este campo es obligatorio"),
     });
-
-
-    
 
     const formik = useFormik({
         initialValues: {
@@ -36,10 +31,8 @@ const FormRegister: React.FC<FormRegisterProps> = ({onRegister}) => {
             password: '',
             firstname: '',
             lastname: '',
-            country: '',  
-            auth0Id: 0,
+            country: '', 
             rol: '',
-            
         },
 
         validationSchema: validationSchema,
@@ -156,21 +149,6 @@ const FormRegister: React.FC<FormRegisterProps> = ({onRegister}) => {
                         />
                         <Form.Control.Feedback type="invalid">
                             {formik.errors.country}
-                        </Form.Control.Feedback>
-                    </Form.Group>
-
-                    <Form.Group controlId="auth0Id">
-                        <Form.Label>Auth0</Form.Label>
-                        <Form.Control
-                            name="auth0Id"
-                            type="number"
-                            value={formik.values.auth0Id}
-                            onChange={formik.handleChange}
-                            onBlur={formik.handleBlur}
-                            isInvalid={Boolean(formik.errors.auth0Id && formik.touched.auth0Id)}
-                        />
-                        <Form.Control.Feedback type="invalid">
-                            {formik.errors.auth0Id}
                         </Form.Control.Feedback>
                     </Form.Group>
 

@@ -1,6 +1,6 @@
 import Persona from "../types/persona";
 
-const API_BASE_URL: string = 'https://seguridad-bs.onrender.com/api/v1/personas';
+const API_BASE_URL: string = 'https://buensaborseg.onrender.com/api/v1/personas';
 
 const tokenObtenido = localStorage.getItem('token');
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

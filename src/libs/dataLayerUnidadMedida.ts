@@ -1,6 +1,6 @@
 import UnidadMedida  from "../types/unidadMedida";
 
-const API_BASE_URL: string = 'https://seguridad-bs.onrender.com/api/v1/unidadmedida';
+const API_BASE_URL: string = 'https://seguridad-bs-2.onrender.com/api/v1/unidadmedida';
 
 const tokenObtenido = localStorage.getItem('token');
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

@@ -105,12 +105,12 @@ const UnidadMedidaTable: React.FC<UnidadMedidaTableProps> = ({unidades}) => {
                 )
                 : (
                     <div className="cuerpote">
-                        <Button onClick={() => onShowSaveModal()} style={{ float: 'right', margin: 10 }} variant="primary">Crear Insumo</Button>
+                        <Button onClick={() => onShowSaveModal()} style={{ float: 'right', margin: 10, border: '1px solid #D32B08', color:'white',backgroundColor:'#D32B08', borderColor:'#D32B08'}}>Crear unidad de medida</Button>
                         <Table striped bordered hover >
                             <thead >
                                 <tr>
                                     <th>#</th>
-                                    <th>Denominacion</th>
+                                    <th>Denominación</th>
                                     <th>Abreviatura</th>
                                     <th>Acciones</th>
                                 </tr>

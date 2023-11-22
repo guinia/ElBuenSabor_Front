@@ -118,7 +118,7 @@ const InsumosTable: React.FC<InsumosTableProps> = ({insumos}) => {
                 )
                 : (
                     <div className="cuerpote">
-                        <Button onClick={() => onShowSaveModal()} style={{ float: 'right', margin: 10, backgroundColor:"#007E00", borderColor:"#007E00"}} >Crear Insumo</Button>
+                        <Button onClick={() => onShowSaveModal()} style={{ float: 'right', margin: 10, border: '1px solid #D32B08', color:'white',backgroundColor:'#D32B08', borderColor:'#D32B08'}} >Crear Insumo</Button>
                         <Table striped bordered hover >
                             <thead >
                                 <tr>

@@ -4,7 +4,7 @@ import * as React from 'react';
 import Spinner from 'react-bootstrap/Spinner';
 import Table from 'react-bootstrap/Table';
 import { Trash, Pencil } from 'react-bootstrap-icons';
-
+import './../Table.css';
 import Persona from "../../../../types/persona";
 import dataLayerPersona from '../../../../libs/dataLayerPersona';
 import '../Table.css';
@@ -96,15 +96,15 @@ const PersonasTable: React.FC<PersonasTableProps> = ({ personas }) => {
             </div>
           )
           : (
-            <>
-              <Button onClick={() => onShowSaveModal()} style={{ float: 'right', margin: 10 }} variant="primary">Crear Persona</Button>
+            <div className="cuerpote">
+              <Button onClick={() => onShowSaveModal()} style={{  float: 'right', margin: 10, border: '1px solid #D32B08', color:'white',backgroundColor:'#D32B08', borderColor:'#D32B08' }}>Crear Persona</Button>
               <Table striped bordered hover>
                 <thead>
                   <tr>
                     <th>#</th>
                     <th>Nombre</th>
                     <th>Apellido</th>
-                    <th>Telefono</th>
+                    <th>Teléfono</th>
                     <th>E-mail</th>
                     <th>Acciones</th>
                   </tr>
@@ -114,11 +114,11 @@ const PersonasTable: React.FC<PersonasTableProps> = ({ personas }) => {
                     listedPersonas.map((p: Persona) => (
                       <tr key={p.id}>
                         <td width='2%'>{p.id}</td>
-                        <td width='23%'>{p.nombre}</td>
-                        <td width='45%'>{p.apellido}</td>
-                        <td width='10%'>{p.telefono}</td>
+                        <td width='10%'>{p.nombre}</td>
+                        <td width='10%'>{p.apellido}</td>
+                        <td width='7%'>{p.telefono}</td>
                         <td width='5%'>{p.email}</td>
-                        <td width='10%'>
+                        <td width='5%'>
                           <Pencil color="black" onClick={() => onShowSaveModal(p)} size={24} onMouseEnter={() => { document.body.style.cursor = 'pointer'}} onMouseLeave={() => { document.body.style.cursor = 'default'}}></Pencil>
                           <Trash color="#D32B08" onClick={() => onShowDeleteModal(p)} size={24} onMouseEnter={() => { document.body.style.cursor = 'pointer'}}  onMouseLeave={() => { document.body.style.cursor = 'default'}} ></Trash>
                         </td>
@@ -127,7 +127,7 @@ const PersonasTable: React.FC<PersonasTableProps> = ({ personas }) => {
                   }
                 </tbody>
               </Table>
-            </>
+            </div>
           )
       }
       <DeletePersonaModal

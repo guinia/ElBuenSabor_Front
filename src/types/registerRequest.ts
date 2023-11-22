@@ -4,8 +4,6 @@ export interface registerRequest {
     firstname: string,
     lastname: string,
     country: string,
-    auth0Id: number,
     rol: string,
-    
 
 }

@@ -1,6 +1,6 @@
 import RubroProducto from "../types/rubroProducto";
 
-const API_BASE_URL: string = 'https://seguridad-bs.onrender.com/api/v1/RubroArticuloManufacturado';
+const API_BASE_URL: string = 'https://seguridad-bs-2.onrender.com/api/v1/RubroArticuloManufacturado';
 
 
 

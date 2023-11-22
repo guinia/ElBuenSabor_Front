@@ -1,10 +1,9 @@
 import { LoginRequest } from "../types/loginRequest";
 import { registerRequest } from "../types/registerRequest";
 
-
 //probar con este link: https://seguridad-bs.onrender.com
 // sin seg: const BASE_URL = 'https://buensaborseguridad.onrender.com';
-const BASE_URL = 'https://seguridad-bs.onrender.com';
+const BASE_URL = 'https://seguridad-bs-2.onrender.com';
 
 export const AuthService = {
   
